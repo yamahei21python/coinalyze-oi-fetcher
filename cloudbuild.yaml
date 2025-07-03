@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'gcloud'
+  args:
+    - 'functions'
+    - 'deploy'
+    - 'coinalyze-oi-fetcher'        # 関数名
+    - '--gen2'                      # 第2世代
+    - '--runtime=python39'          # ランタイム
+    - '--region=asia-northeast1'    # リージョン
+    - '--source=.'                  # ソースコードの場所（リポジトリのルート）
+    - '--entry-point=run_job'       # エントリポイント
+    - '--trigger-http'              # トリガーの種類
+    - '--allow-unauthenticated'     # 未認証アクセスの許可
+    - '--timeout=540s'              # タイムアウト時間
+    - '--service-account=activeoi-516347267533-compute@developer.gserviceaccount.com' # ⚠️関数を実行するサービスアカウント
