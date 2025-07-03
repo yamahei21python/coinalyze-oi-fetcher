@@ -7,7 +7,7 @@ import os
 from google.cloud import storage, secretmanager
 
 # --- ▼▼▼【重要：ここを書き換えてください】▼▼▼ ---
-
+print("デプロイテスト")
 # Google CloudプロジェクトID (コンソール上部に表示されています)
 PROJECT_ID = "activeoi-51634" # 自分のプロジェクトIDに書き換えてください
 
